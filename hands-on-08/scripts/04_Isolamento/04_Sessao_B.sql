@@ -1,0 +1,17 @@
+﻿-- HANDS-ON #08 | Ponto de Conhecimento Tecnológico
+-- Executar em janela de consulta própria no SSMS.
+USE SIManagerDB;
+GO
+-- PASSO 2: após a Sessão A deixar UPDATE sem COMMIT.
+SET IMPLICIT_TRANSACTIONS OFF;
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+SET LOCK_TIMEOUT 5000;
+SELECT * FROM dbo.H08_TesteIsolamento WHERE Id=1; -- Esperado: erro 1222
+GO
+SET LOCK_TIMEOUT -1;
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+SELECT * FROM dbo.H08_TesteIsolamento WHERE Id=1; -- Leitura suja: 500
+GO
+-- PASSO 4: após o ROLLBACK da Sessão A:
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+SELECT * FROM dbo.H08_TesteIsolamento WHERE Id=1; -- 100
