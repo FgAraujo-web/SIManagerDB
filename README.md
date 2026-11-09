@@ -76,6 +76,10 @@ SIManagerDB/
 ├── hands-on-07/
 ├── hands-on-08/
 ├── hands-on-09/
+├── ReportPowerBI/
+│   ├── SIManagerDB_Documentacao_Tecnica_PowerBI.pdf
+│   ├── SIManagerDB_Relatorio01_GestaoIncidentes_final.pbix
+│   └── SIManagerDB_Relatorio01_GestaoIncidentes_final.pdf
 ├── .gitignore
 ├── README.md
 └── Serie_2_SQL_Server_Extras_PowerBI_Atualizado.html
@@ -89,27 +93,54 @@ Cada módulo reúne os respetivos materiais técnicos, incluindo scripts SQL e d
 2. Consultar a pasta `database/` para preparar a SIManagerDB.
 3. Executar os scripts de instalação e validação pela ordem documentada.
 4. Explorar os exercícios dos módulos #05 a #09.
+5. Consultar `ReportPowerBI/` para aceder aos relatórios e à documentação Power BI.
 
 Os laboratórios foram desenvolvidos e validados com SQL Server 2019 Express.
 
 ## Mapa interativo da Série 2
 
-Consulte o percurso técnico completo, os resultados dos cinco HANDS-ON e a próxima extensão em Power BI:
+Consulte o percurso técnico completo e os resultados dos cinco HANDS-ON:
 
 **[Abrir o mapa interativo — Série 2 SQL Server](https://fgaraujo-web.github.io/SIManagerDB/Serie_2_SQL_Server_Extras_PowerBI_Atualizado.html)**
 
-## Próxima extensão — Power BI Analytics
+## Extensão concluída — Relatórios Power BI
 
-Está prevista uma extensão prática para transformar os dados operacionais da SIManagerDB em relatórios analíticos, através de Power Query, modelação de dados e DAX.
+Como complemento à Série 2 — SQL Server, foi desenvolvido um relatório interativo em **Microsoft Power BI Desktop**, baseado nos dados fictícios da SIManagerDB. O ficheiro `.pbix` contém **quatro páginas analíticas**, com um modelo semântico composto por seis tabelas, cinco relações ativas e 20 medidas DAX documentadas.
 
-Os quatro relatórios propostos são:
+### Páginas do relatório
 
-1. Gestão de Incidentes.
-2. Portefólio Aplicacional.
-3. Operação e Suporte Técnico.
-4. Contratos e Licenciamento.
+| Página | Objetivo |
+|---|---|
+| **Incidentes** | Monitorizar volumes, estados, evolução mensal, tempos de resolução e cumprimento de SLA. |
+| **Aplicações** | Analisar o portefólio, estados, criticidade e aplicações com mais incidentes. |
+| **Equipas Técnicas** | Analisar incidentes atribuídos, técnicos e distribuição por equipa. |
+| **Visão Executiva** | Consolidar os principais indicadores e tendências para consulta de gestão. |
 
-**Estado:** proposta por desenvolver.
+### Tecnologias e funcionalidades
+
+- **SQL Server:** origem dos dados operacionais fictícios.
+- **Power BI Desktop:** construção e apresentação do relatório.
+- **Modelo de dados:** tabelas de incidentes, aplicações, técnicos, equipas, políticas SLA e calendário.
+- **DAX:** medidas para contagens, rankings, tempos médios e cumprimento de SLA.
+- **Interatividade:** segmentadores de ano e estado e navegação entre páginas.
+
+### Ficheiros disponíveis
+
+- **[Relatório Power BI (.pbix)](ReportPowerBI/SIManagerDB_Relatorio01_GestaoIncidentes_final.pbix)** — ficheiro editável com as quatro páginas.
+- **[Exportação do relatório (.pdf)](ReportPowerBI/SIManagerDB_Relatorio01_GestaoIncidentes_final.pdf)** — versão estática para consulta.
+- **[Documentação técnica (.pdf)](ReportPowerBI/SIManagerDB_Documentacao_Tecnica_PowerBI.pdf)** — arquitetura, relações, medidas DAX, relatórios, testes e evolução futura.
+
+### Como explorar
+
+1. Preparar a base de dados fictícia com os materiais de `database/`.
+2. Abrir o ficheiro `.pbix` no Power BI Desktop.
+3. Se necessário, configurar a ligação à instância local do SQL Server e atualizar as credenciais da origem.
+4. Atualizar os dados e explorar as quatro páginas e os respetivos filtros.
+5. Consultar a documentação técnica para compreender o modelo e as regras de cálculo.
+
+> **Nota:** os dados são simulados e destinam-se a fins educativos. A exportação PDF não conserva a interatividade do Power BI. A configuração da origem de dados pode necessitar de adaptação ao ambiente de cada utilizador.
+
+**Estado:** extensão Power BI desenvolvida e disponibilizada no repositório.
 
 ---
 
